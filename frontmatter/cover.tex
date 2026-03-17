@@ -1,0 +1,65 @@
+% =============================================================================
+% cover.tex — Halaman Sampul
+% Dihitung sebagai halaman i, nomor tidak dicetak
+% =============================================================================
+
+\thispagestyle{empty}
+\setcounter{page}{1}   % Sampul = halaman i
+
+\begin{titlepage}
+\begin{center}
+
+% Judul Tugas Akhir
+{\bfseries\MakeUppercase{\JudulTA}}\\[0.8cm]
+
+% Jenis dokumen
+\ifthenelse{\equal{\JenjangProgram}{S1}}{%
+  {\bfseries SKRIPSI}\\[0.5cm]%
+}{}
+\ifthenelse{\equal{\JenjangProgram}{S2}}{%
+  {\bfseries TESIS}\\[0.5cm]%
+}{}
+\ifthenelse{\equal{\JenjangProgram}{S3}}{%
+  {\bfseries DISERTASI}\\[0.5cm]%
+}{}
+
+% Kalimat pengajuan
+\ifthenelse{\equal{\JenjangProgram}{S1}}{%
+  Diajukan sebagai Salah Satu Syarat untuk Memperoleh Gelar \NamaProgram\\
+  pada Program Studi \NamaProdi\\[0.5cm]%
+}{}
+\ifthenelse{\equal{\JenjangProgram}{S2}}{%
+  Diajukan sebagai Salah Satu Syarat untuk Memperoleh Gelar \NamaProgram\\
+  pada Program Studi \NamaProdi\\[0.5cm]%
+}{}
+\ifthenelse{\equal{\JenjangProgram}{S3}}{%
+  Diajukan sebagai Salah Satu Syarat untuk Memperoleh Gelar \NamaProgram\\
+  pada Program Studi \NamaProdi\\[0.5cm]%
+}{}
+
+\vfill
+
+% Data mahasiswa
+Disusun oleh:\\[0.3cm]
+{\bfseries\NamaMahasiswa}\\
+{\bfseries NIM: \NIM}\\[1cm]
+
+\vfill
+
+% Logo Universitas Telkom
+% Ganti path sesuai lokasi logo Anda
+\includegraphics[width=4cm]{images/Logo-Universitas-Telkom-Horizontal.png}\\[0.5cm]
+
+\vfill
+
+% Institusi
+{\bfseries
+PROGRAM STUDI \MakeUppercase{\NamaProdi}\\
+FAKULTAS \MakeUppercase{\NamaFakultas}\\
+\MakeUppercase{\NamaUniversitas}\\
+\MakeUppercase{\KotaTempat}\\
+\TahunLulus
+}
+
+\end{center}
+\end{titlepage}

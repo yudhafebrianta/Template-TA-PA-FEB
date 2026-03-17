@@ -1,0 +1,148 @@
+% =============================================================================
+% main-proyek-bisnis.tex — Template B: Proyek Bisnis / Studi Kasus (S2)
+% Fakultas Ekonomi dan Bisnis, Universitas Telkom
+%
+% Dibuat oleh   : M. Yudha Febrianta, ST., MM.
+% Diperuntukkan : FEB Universitas Telkom
+% Berdasarkan   : KD ATURAN PENULISAN TA PA FEB 2025-09-15 (Lampiran II)
+%
+% Cara kompilasi:
+%   pdflatex main-proyek-bisnis
+%   biber main-proyek-bisnis
+%   pdflatex main-proyek-bisnis
+%   pdflatex main-proyek-bisnis
+%
+% Atau gunakan latexmk:
+%   latexmk -pdf main-proyek-bisnis
+% =============================================================================
+
+\documentclass[12pt, a4paper, twoside, openright]{book}
+\usepackage{amssymb}
+
+% Load style FEB
+\usepackage{feb-style}
+
+% =============================================================================
+% VARIABEL — ISI SESUAI DATA MAHASISWA
+% =============================================================================
+\newcommand{\JudulTA}{Judul Proyek Bisnis / Studi Kasus yang Ditulis di Sini}
+\newcommand{\JudulTAEng}{Business Project / Case Study Title Written Here}
+
+% Template B hanya untuk S2
+\newcommand{\JenjangProgram}{S2}
+
+\newcommand{\NamaProgram}{Magister Manajemen}   % contoh: Magister Manajemen / Magister Akuntansi
+\newcommand{\NamaProdi}{Manajemen}
+\newcommand{\NamaFakultas}{Ekonomi dan Bisnis}
+\newcommand{\NamaUniversitas}{Universitas Telkom}
+\newcommand{\KotaTempat}{Bandung}
+\newcommand{\TahunLulus}{2025}
+
+\newcommand{\NamaMahasiswa}{Nama Lengkap Mahasiswa}
+\newcommand{\NIM}{1234567890}
+
+% Pembimbing S2: 2 pembimbing
+\newcommand{\NamaPembimbing}{Nama Pembimbing Utama, Gelar}
+\newcommand{\NIPPembimbing}{NIP/NIDN Pembimbing Utama}
+\newcommand{\NamaPembimbingDua}{Nama Pembimbing Kedua, Gelar}
+\newcommand{\NIPPembimbingDua}{NIP/NIDN Pembimbing Kedua}
+
+% Dekan / Kaprodi
+\newcommand{\NamaDekan}{Nama Dekan FEB, Gelar}
+\newcommand{\NIPDekan}{NIP/NIDN Dekan}
+\newcommand{\NamaKaprodi}{Nama Kaprodi, Gelar}
+\newcommand{\NIPKaprodi}{NIP/NIDN Kaprodi}
+
+% =============================================================================
+% BIBLIOGRAFI
+% =============================================================================
+\addbibresource{backmatter/daftar-pustaka.bib}
+
+% =============================================================================
+% METADATA PDF
+% =============================================================================
+\hypersetup{
+  pdftitle={\JudulTA},
+  pdfauthor={\NamaMahasiswa},
+  pdfsubject={Proyek Bisnis \NamaProdi\ \NamaUniversitas},
+  pdfkeywords={proyek bisnis, studi kasus, \NamaProdi, \NamaUniversitas}
+}
+
+% =============================================================================
+% DOKUMEN
+% =============================================================================
+\begin{document}
+
+% ---------------------------------------------------------------------------
+% FRONT MATTER — angka Romawi kecil
+% ---------------------------------------------------------------------------
+\frontmatter
+\pagestyle{frontmatterstyle}
+
+% Halaman Sampul
+\include{frontmatter/cover}
+
+% Halaman Pengesahan (S2: 2 pembimbing)
+\include{frontmatter/pengesahan-s1s2}
+
+% Surat Pernyataan Orisinalitas
+\include{frontmatter/pernyataan}
+
+% Halaman Persembahan Khusus
+\include{frontmatter/persembahan}
+
+% Kata Pengantar
+\include{frontmatter/kata-pengantar}
+
+% Abstrak (Bahasa Indonesia)
+\include{frontmatter/abstrak}
+
+% Abstract (Bahasa Inggris)
+\include{frontmatter/abstract}
+
+% Daftar Isi
+\tableofcontents
+\addcontentsline{toc}{chapter}{DAFTAR ISI}
+
+% Daftar Tabel
+\listoftables
+\addcontentsline{toc}{chapter}{DAFTAR TABEL}
+
+% Daftar Gambar
+\listoffigures
+\addcontentsline{toc}{chapter}{DAFTAR GAMBAR}
+
+% Daftar Lampiran
+\listoflampiran
+\addcontentsline{toc}{chapter}{DAFTAR LAMPIRAN}
+
+% ---------------------------------------------------------------------------
+% MAIN MATTER — angka Arab mulai dari 1
+% ---------------------------------------------------------------------------
+\mainmatter
+\pagestyle{bodystyle}
+
+% BAB I: sama dengan Skripsi
+\include{chapters/bab1-pendahuluan-pb}
+
+% BAB II–IV: khusus Proyek Bisnis
+\include{chapters-pb/bab2-tinjauan-bisnis}
+\include{chapters-pb/bab3-metode-bisnis}
+\include{chapters-pb/bab4-implementasi}
+
+% BAB V: sama
+\include{chapters/bab5-kesimpulan}
+
+% ---------------------------------------------------------------------------
+% BACK MATTER
+% ---------------------------------------------------------------------------
+\backmatter
+
+% Daftar Pustaka
+\include{backmatter/daftar-pustaka}
+
+% Lampiran
+\appendix
+\include{backmatter/lampiran}
+
+\end{document}
